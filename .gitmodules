@@ -1,0 +1,3 @@
+[submodule "JoinOrm"]
+	path = JoinOrm
+	url = https://github.com/FFlorien/JoinOrm.git

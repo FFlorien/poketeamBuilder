@@ -1,0 +1,3 @@
+include ':app', ':processor', ':api'
+project(':processor').projectDir = new File('JoinOrm/processor')
+project(':api').projectDir = new File('JoinOrm/api')
