@@ -1,3 +1,4 @@
-include ':app', ':processor', ':api'
-project(':processor').projectDir = new File('JoinOrm/processor')
+include ':app', ':api', ':annotation', ':processor'
 project(':api').projectDir = new File('JoinOrm/api')
+project(':annotation').projectDir = new File('JoinOrm/annotation')
+project(':processor').projectDir = new File('JoinOrm/processor')
