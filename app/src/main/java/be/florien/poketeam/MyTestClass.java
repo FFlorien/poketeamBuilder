@@ -1,5 +1,6 @@
 package be.florien.poketeam;
 
+import be.florien.joinorm.annotation.JoId;
 import be.florien.joinorm.annotation.JoTable;
 
 /**
@@ -9,5 +10,6 @@ import be.florien.joinorm.annotation.JoTable;
 @JoTable
 public class MyTestClass {
 
+    @JoId
     private String tutu;
 }
