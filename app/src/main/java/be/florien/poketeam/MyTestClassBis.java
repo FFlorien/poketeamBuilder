@@ -8,12 +8,12 @@ import be.florien.joinorm.annotation.JoTable;
  */
 
 @JoTable
-public class MyTestClass {
+public class MyTestClassBis {
 
     @JoId
-    private String tutu;
+    private String huhu;
 
-    private String tataTutu;
+    private String haha;
 
-    private int toto;
+    private int hoho;
 }
