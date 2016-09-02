@@ -16,4 +16,6 @@ public class MyTestClass {
     private String tataTutu;
 
     private int toto;
+
+    private MyTestClassBis tutututu;
 }
