@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pokemon Team Builder</string>
+    <string name="power">Puissance: &lt;b>%1$d&lt;/b></string>
+    <string name="pp">PP: &lt;b>%1$d&lt;/b></string>
+    <string name="all">Tous</string>
+    <string name="type">Type</string>
+    <string name="filters">Filtres</string>
+    <string name="filter_action">Filtrer</string>
+    <string name="pokemon_specie_list_title">Pokédex</string>
+    <string name="pokemon_specie_move_list_title">Attaques de: %1$s</string>
+    <string name="pokemon_specie_move_list_button">Attaques</string>
+    <string name="pokemon_specie_weaknesses">Faiblesses</string>
+    <string name="move_list_title">Attaques</string>
+    <string name="move_pokemon_specie_list_title">Pokémons avec %1$s</string>
+    <string name="move_pokemon_specie_list_button">Pokémons avec\nce mouvement</string>
+    <string name="type_list_title">Types</string>
+    <string name="detail_title">Détails de: %1$s</string>
+    <string name="choose_a_move">Veuillez choisir un mouvement</string>
+    <string name="choose_a_specie">Veuillez choisir un pokémon</string>
+    <string name="empty_pokemon">Aucun pokémon ne correspond au filtre</string>
+    <string name="loading_pokemons">Chargement des pokémons</string>
+    <string name="loading_move">Chargement des attaques</string>
+    <string name="loading_type">Chargement des types</string>
+    <string name="empty_move">Aucun mouvement ne correspond au filtre</string>
+    <string name="empty_type">Aucun type ne correspond au filtre</string>
+    <string name="damage_class">Classe de dommage</string>
+    <string name="ailment_inflicted">Affection infligée</string>
+    <string name="minimum_pp">PP min.: %1$d</string>
+    <string name="minimum_power">Puissance min.: %1$d</string>
+    <string name="crit_rate">Chances de critique: &lt;b>%1$d%%&lt;/b></string>
+    <string name="healing">Soigne: &lt;b>%1$dPV&lt;/b></string>
+    <string name="accuracy">Précision: &lt;b>%1$d%%&lt;/b></string>
+    <string name="hits">Coups portés: entre &lt;b>%1$d&lt;/b> et &lt;b>%2$d&lt;/b></string>
+    <string name="turns">Tours actifs: entre &lt;b>%1$d&lt;/b> et &lt;b>%2$d&lt;/b></string>
+    <string name="priority">Priorité: &lt;b>%1$d&lt;/b></string>
+    <string name="flinch">Peur: &lt;b>%1$d&lt;/b>%%</string>
+    <string name="recoil">Contrecoup: &lt;b>%1$d&lt;/b>PV</string>
+    <string name="move_method_level">Niveau: &lt;b>%1$d&lt;/b></string>
+    <string name="move_method_egg">&lt;b>Oeuf&lt;/b></string>
+    <string name="move_method_tutor">&lt;b>Tuteur&lt;/b></string>
+    <string name="move_method_machine">&lt;b>CT/CS&lt;/b></string>
+    <string name="move_method_stadium">&lt;b>Pokémon Stadium: Surfing Pikachu&lt;/b></string>
+    <string name="move_method_light_ball">&lt;b>Light Ball Egg&lt;/b></string>
+    <string name="move_method_colosseum">&lt;b>Pokémon Colosseum: Purification&lt;/b></string>
+    <string name="move_method_xd_shadow">&lt;b>Pokémon XD: Shadow&lt;/b></string>
+    <string name="move_method_xd_purification">&lt;b>Pokémon XD: Purification&lt;/b></string>
+    <string name="move_method_form">&lt;b>Changement de forme&lt;/b></string>
+    <string name="capture">Capture</string>
+    <string name="generation">Génération</string>
+    <string name="mega_evolution">Méga évolution</string>
+    <string name="preferences">Préférences</string>
+    <string name="save">Enregistrer</string>
+    <string name="language">Langage:</string>
+    <string name="disclaimer_language">Toutes les traductions peuvent ne pas être disponibles selon la langue choisie</string>
+    <string name="ineffective">Inefficace (0%)</string>
+    <string name="nearly_ineffective">Presque inefficace (25%)</string>
+    <string name="not_very_effective">Pas très efficace (50%)</string>
+    <string name="effective">Efficace (100%)</string>
+    <string name="super_effective">Super efficace (200%)</string>
+    <string name="mega_effective">Méga efficace (400%)</string>
+    <string name="as_attack">Comme attaque</string>
+    <string name="as_defense">Comme defense</string>
+
+</resources>
