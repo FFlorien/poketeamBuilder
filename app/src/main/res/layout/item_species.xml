@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,16 +10,36 @@
 
     </data>
 
-    <LinearLayout
-        android:id="@+id/species_container"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pokemon_image"
+            android:layout_height="match_parent"
+            android:layout_width="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:imageUrl="@{species.imageUrl}"/>
 
         <TextView
             android:id="@+id/speciesName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/pokemon_image"
+            android:layout_toRightOf="@+id/pokemon_image"
             android:text="@{species.speciesName}" />
-    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pokemon_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/speciesName"
+            android:layout_toEndOf="@+id/pokemon_image"
+            android:layout_toRightOf="@+id/pokemon_image"
+            android:orientation="vertical" />
+
+    </RelativeLayout>
 </layout>

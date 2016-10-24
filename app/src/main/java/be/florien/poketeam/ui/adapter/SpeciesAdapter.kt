@@ -16,9 +16,9 @@ class SpeciesAdapter(val species: List<PokemonSpecie>) : RecyclerView.Adapter<Sp
         val speciesBinding = parent.inflateBinding(R.layout.item_species) as ItemSpeciesBinding
         val childrenVM = mutableListOf<PokemonItemVM>()
         for (formViewIterator in 0..(viewType - 1)) {
-            val pokemonBinding = speciesBinding.speciesContainer.inflateBinding(R.layout.item_pokemon) as ItemPokemonBinding
+            val pokemonBinding = speciesBinding.pokemonContainer.inflateBinding(R.layout.item_pokemon) as ItemPokemonBinding
             childrenVM.add(PokemonItemVM(pokemonBinding))
-            speciesBinding.speciesContainer.addView(pokemonBinding.root)
+            speciesBinding.pokemonContainer.addView(pokemonBinding.root)
         }
 
         return SpeciesItemViewHolder(speciesBinding, childrenVM)
