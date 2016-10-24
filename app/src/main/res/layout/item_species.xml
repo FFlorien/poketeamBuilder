@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
+
         <variable
             name="species"
-            type="be.florien.poketeam.ui.viewmodel.SpeciesItemVM"/>
+            type="be.florien.poketeam.ui.viewmodel.SpeciesItemVM" />
 
     </data>
 
     <LinearLayout
         android:id="@+id/species_container"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/speciesName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/speciesName"
-            android:text="@{species.speciesName}"/>
-
+            android:text="@{species.speciesName}" />
     </LinearLayout>
 </layout>
