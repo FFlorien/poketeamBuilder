@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class DBUserHelper extends SQLiteOpenHelper {
+class DBUserHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "pokedex_user_infos.db";
     private static final int DATABASE_VERSION = 1;

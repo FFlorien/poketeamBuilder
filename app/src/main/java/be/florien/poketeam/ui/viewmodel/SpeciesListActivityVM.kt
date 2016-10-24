@@ -6,10 +6,6 @@ import be.florien.poketeam.databinding.ActivityPokemonListBinding
 import be.florien.poketeam.model.PokemonSpecie
 import be.florien.poketeam.ui.adapter.SpeciesAdapter
 
-/**
- * Created by FlamentF on 13-10-16.
- */
-
 class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding) {
 
     fun init() {

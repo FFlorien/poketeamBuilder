@@ -11,10 +11,6 @@ import be.florien.poketeam.databinding.ActivityPokemonListBinding
 import be.florien.poketeam.model.PokemonSpecie
 import be.florien.poketeam.ui.viewmodel.SpeciesListActivityVM
 
-/**
- * Created by FlamentF on 13-10-16.
- */
-
 class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<PokemonSpecie>> {
 
     val viewModel by lazy { SpeciesListActivityVM(DataBindingUtil.setContentView<ActivityPokemonListBinding>(this, R.layout.activity_pokemon_list)) }
