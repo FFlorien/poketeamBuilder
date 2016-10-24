@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="28dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -18,14 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{pokemon.pokemonName}"
-            android:padding="10dp"/>
+            android:layout_margin="10dp"/>
 
         <TextView
             android:id="@+id/type1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{pokemon.type1}"
-            android:padding="10dp"/>
+            android:layout_margin="10dp"/>
 
         <TextView
             android:id="@+id/type2"
@@ -33,6 +33,6 @@
             android:layout_height="wrap_content"
             android:text="@{pokemon.type2}"
             android:visibility="@{pokemon.type2Visibility}"
-            android:padding="10dp" />
+            android:layout_margin="10dp" />
     </LinearLayout>
 </layout>
