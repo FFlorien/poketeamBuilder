@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="be.florien.poketeam.ui.activity.PokemonListActivity"
+            android:name="be.florien.poketeam.ui.activity.SpeciesListActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

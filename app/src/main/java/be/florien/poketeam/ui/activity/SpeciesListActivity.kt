@@ -9,15 +9,15 @@ import be.florien.poketeam.R
 import be.florien.poketeam.async.PokemonSpecieListLoader
 import be.florien.poketeam.databinding.ActivityPokemonListBinding
 import be.florien.poketeam.model.PokemonSpecie
-import be.florien.poketeam.ui.viewmodel.PokemonListViewModel
+import be.florien.poketeam.ui.viewmodel.SpeciesListActivityVM
 
 /**
  * Created by FlamentF on 13-10-16.
  */
 
-class PokemonListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<PokemonSpecie>> {
+class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<PokemonSpecie>> {
 
-    val viewModel by lazy { PokemonListViewModel(DataBindingUtil.setContentView<ActivityPokemonListBinding>(this, R.layout.activity_pokemon_list)) }
+    val viewModel by lazy { SpeciesListActivityVM(DataBindingUtil.setContentView<ActivityPokemonListBinding>(this, R.layout.activity_pokemon_list)) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class PokemonListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<L
         supportLoaderManager.initLoader(0, null, this)
     }
 
-    override fun onLoadFinished(loader: Loader<List<PokemonSpecie>>?, data: List<PokemonSpecie>?) {
+    override fun onLoadFinished(loader: Loader<List<PokemonSpecie>>?, data: List<PokemonSpecie>) {
         viewModel.setPokemonData(data)
     }
 

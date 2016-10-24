@@ -18,7 +18,7 @@ class PokemonSpecieListLoader(context: Context)
     override fun loadInBackground(): List<PokemonSpecie> {
         val dataQueryHelper = JOQueryHelper(DBPokedexHelper(context))
         val pokemonFormTable = PokemonFormTable().selectId().selectPokemonFormNames(TranslationTableField.forPokemonForm())
-        val pokemonTable = PokemonTable().selectId().selectTypes(TypeTableTmpForPokemon().selectId()).selectPokemonForms(pokemonFormTable)
+        val pokemonTable = PokemonTable().selectId().selectTypes(TypeTableTmpForPokemon().selectId().selectName()).selectPokemonForms(pokemonFormTable)
         val specieTable = PokemonSpecieTable().selectId().selectPokemonSpeciesNames(TranslationTableField.forPokemonSpecie()).selectPokemon(pokemonTable)
         val start = System.nanoTime()
         val query = dataQueryHelper.queryList(specieTable)
