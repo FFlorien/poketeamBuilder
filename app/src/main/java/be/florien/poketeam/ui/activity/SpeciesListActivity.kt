@@ -10,7 +10,6 @@ import be.florien.poketeam.async.PokemonSpecieListLoader
 import be.florien.poketeam.databinding.ActivityPokemonListBinding
 import be.florien.poketeam.model.PokemonSpecie
 import be.florien.poketeam.ui.viewmodel.SpeciesListActivityVM
-import com.squareup.picasso.Picasso
 
 class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<PokemonSpecie>> {
 
@@ -18,7 +17,6 @@ class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Picasso.with(this).setIndicatorsEnabled(true)
         viewModel.init()
     }
 
@@ -36,6 +34,5 @@ class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<L
     }
 
     override fun onLoaderReset(loader: Loader<List<PokemonSpecie>>?) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

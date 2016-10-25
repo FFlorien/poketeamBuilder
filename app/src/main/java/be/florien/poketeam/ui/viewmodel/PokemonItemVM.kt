@@ -37,7 +37,20 @@ class PokemonItemVM(val pokemonItemBinding: ItemPokemonBinding) : BaseObservable
 
     @Bindable
     fun getType1() : String {
-        return pokemon?.types?.get(0)?.type_names?.first ?: "No type ???"
+        return pokemon?.types?.get(0)?.type_names?.first
+                ?: pokemon?.types?.get(0)?.identifier
+                ?: "No type ???"
+    }
+
+    @Bindable
+    fun getType2() : String {
+        return if (getType2Present()) {
+            pokemon?.types?.get(1)?.type_names?.first
+                    ?: pokemon?.types?.get(1)?.identifier
+                    ?: ""
+        } else {
+            ""
+        }
     }
 
     @Bindable
@@ -55,11 +68,11 @@ class PokemonItemVM(val pokemonItemBinding: ItemPokemonBinding) : BaseObservable
     }
 
     @Bindable
-    fun getType2() : String {
+    fun getType2Visibility() : Int {
         return if (getType2Present()) {
-            pokemon?.types?.get(1)?.type_names?.first ?: pokemon?.types?.get(1)?.identifier ?: ""
-        } else {
-            ""
+            View.VISIBLE
+        }else {
+            View.GONE
         }
     }
 
@@ -71,15 +84,6 @@ class PokemonItemVM(val pokemonItemBinding: ItemPokemonBinding) : BaseObservable
         }
     }
 
-    @Bindable
-    fun getType2Visibility() : Int {
-        return if (getType2Present()) {
-            View.VISIBLE
-        }else {
-            View.GONE
-        }
-    }
-
     private fun getType2Present() : Boolean {
         return if ((pokemon?.types?.size ?: 0) > 1) {
             true
@@ -87,7 +91,4 @@ class PokemonItemVM(val pokemonItemBinding: ItemPokemonBinding) : BaseObservable
             false
         }
     }
-
-
-
 }

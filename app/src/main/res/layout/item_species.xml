@@ -16,10 +16,11 @@
 
         <ImageView
             android:id="@+id/pokemon_image"
-            android:layout_height="match_parent"
-            android:layout_width="64dp"
+            android:layout_height="@dimen/item_image_size"
+            android:layout_width="@dimen/item_image_size"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             app:imageUrl="@{species.imageUrl}"/>
 
         <TextView
@@ -27,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:textStyle="bold"
             android:layout_toEndOf="@+id/pokemon_image"
             android:layout_toRightOf="@+id/pokemon_image"
             android:text="@{species.speciesName}" />
@@ -35,7 +37,6 @@
             android:id="@+id/pokemon_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_below="@id/speciesName"
             android:layout_toEndOf="@+id/pokemon_image"
             android:layout_toRightOf="@+id/pokemon_image"

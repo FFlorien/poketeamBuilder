@@ -30,7 +30,8 @@ class PokemonSpecieListLoader(context: Context) : AbstractAsyncTaskLoader<List<P
                                 .selectTypes(
                                         TypeTableTmpForPokemon()
                                                 .selectId()
-                                                .selectName())
+                                                .selectIdentifier())
+//                                                .selectName())
                                 .selectPokemonForms(
                                         PokemonFormTable()
                                                 .selectId()
@@ -39,7 +40,7 @@ class PokemonSpecieListLoader(context: Context) : AbstractAsyncTaskLoader<List<P
                                                 .selectPokemonFormNames(
                                                         TranslationTableField.forPokemonForm())))
         val start = System.nanoTime()
-        val query = dataQueryHelper.queryList(specieTable.addWhere(WhereStatement(PokemonSpecieTable.COLUMN_ID, 300, WhereCondition.LESS_EQUAL)))
+        val query = dataQueryHelper.queryList(specieTable/*.addWhere(WhereStatement(PokemonSpecieTable.COLUMN_ID, 300, WhereCondition.LESS_EQUAL))*/)
         val stop = System.nanoTime()
         Log.d("PKMN", "Duration for loading of species with reflection == " + (stop - start))
         return query
