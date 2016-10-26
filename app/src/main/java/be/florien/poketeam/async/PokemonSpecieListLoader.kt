@@ -40,7 +40,6 @@ class PokemonSpecieListLoader(context: Context) : AbstractAsyncTaskLoader<List<P
         val start = System.nanoTime()
         val query = dataQueryHelper.queryList(specieTable, 20 /*.addWhere(WhereStatement(PokemonSpecieTable.COLUMN_ID, 300, WhereCondition.LESS_EQUAL))*/)
         val stop = System.nanoTime()
-        commitContentChanged()
         Log.d("PKMN", "Duration for loading of species with reflection == " + (stop - start))
         return query
     }

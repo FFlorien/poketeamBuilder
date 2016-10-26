@@ -24,6 +24,11 @@ public abstract class AbstractAsyncTaskLoader<D> extends AsyncTaskLoader<D> {
     }
 
     @Override
+    protected void onForceLoad() {
+        super.onForceLoad();
+    }
+
+    @Override
     protected void onStopLoading() {
         cancelLoad();
     }

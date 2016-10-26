@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.LoaderManager
 import android.support.v4.content.Loader
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import be.florien.poketeam.R
 import be.florien.poketeam.async.PokemonSpecieListLoader
 import be.florien.poketeam.databinding.ActivityPokemonListBinding
@@ -13,6 +14,7 @@ import be.florien.poketeam.ui.viewmodel.SpeciesListActivityVM
 
 class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<List<PokemonSpecie>>, SpeciesListActivityVM.LoadMoreItem {
     override fun loadMoreItems() {
+        Log.d("PKMN", "loadMore")
         supportLoaderManager.getLoader<List<PokemonSpecie>>(0).forceLoad()
     }
 
@@ -29,6 +31,7 @@ class SpeciesListActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<L
     }
 
     override fun onLoadFinished(loader: Loader<List<PokemonSpecie>>?, data: List<PokemonSpecie>) {
+        Log.d("PKMN", "OnLoadFinished")
         viewModel.setPokemonData(data)
     }
 
