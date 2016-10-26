@@ -10,6 +10,7 @@ import be.florien.poketeam.ui.adapter.SpeciesAdapter
 class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding, private val listener : LoadMoreItem) {
 
     val speciesAdapter = SpeciesAdapter()
+    var updateAsked = false
     fun init() {
         viewBinding.apply {
             listStateView.text = "Loading"
@@ -19,9 +20,10 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
             pokemonSpeciesRecycler.adapter = speciesAdapter
             pokemonSpeciesRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-                    if ((pokemonSpeciesRecycler.layoutManager as LinearLayoutManager).findLastVisibleItemPosition() > (pokemonSpeciesRecycler.adapter.itemCount -5)) {
+                    //super.onScrolled(recyclerView, dx, dy)
+                    if ((pokemonSpeciesRecycler.layoutManager as LinearLayoutManager).findLastVisibleItemPosition() > (pokemonSpeciesRecycler.adapter.itemCount -5) && !updateAsked) {
                         listener.loadMoreItems()
+                        updateAsked = true
                     }
                 }
             })
@@ -30,10 +32,11 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
 
     fun setPokemonData(list: List<PokemonSpecie>) {
         viewBinding.apply {
-            speciesAdapter.addToList(list)
+            speciesAdapter.setList(list)
             listStateView.visibility = View.GONE
             pokemonSpeciesRecycler.visibility = View.VISIBLE
         }
+        updateAsked = false
     }
 
     interface LoadMoreItem {
