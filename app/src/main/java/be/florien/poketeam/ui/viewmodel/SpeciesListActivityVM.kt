@@ -1,23 +1,42 @@
 package be.florien.poketeam.ui.viewmodel
 
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import be.florien.poketeam.databinding.ActivityPokemonListBinding
 import be.florien.poketeam.model.PokemonSpecie
 import be.florien.poketeam.ui.adapter.SpeciesAdapter
 
-class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding) {
+class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding, private val listener : LoadMoreItem) {
 
+    val speciesAdapter = SpeciesAdapter()
     fun init() {
-        viewBinding.listStateView.text = "Loading"
-        viewBinding.listStateView.visibility = View.VISIBLE
-        viewBinding.pokemonSpeciesRecycler.visibility = View.GONE
-        viewBinding.pokemonSpeciesRecycler.layoutManager = LinearLayoutManager(viewBinding.root.context)
+        viewBinding.apply {
+            listStateView.text = "Loading"
+            listStateView.visibility = View.VISIBLE
+            pokemonSpeciesRecycler.visibility = View.GONE
+            pokemonSpeciesRecycler.layoutManager = LinearLayoutManager(viewBinding.root.context)
+            pokemonSpeciesRecycler.adapter = speciesAdapter
+            pokemonSpeciesRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    if ((pokemonSpeciesRecycler.layoutManager as LinearLayoutManager).findLastVisibleItemPosition() > (pokemonSpeciesRecycler.adapter.itemCount -5)) {
+                        listener.loadMoreItems()
+                    }
+                }
+            })
+        }
     }
 
     fun setPokemonData(list: List<PokemonSpecie>) {
-        viewBinding.pokemonSpeciesRecycler.adapter = SpeciesAdapter(list)
-        viewBinding.listStateView.visibility = View.GONE
-        viewBinding.pokemonSpeciesRecycler.visibility = View.VISIBLE
+        viewBinding.apply {
+            speciesAdapter.addToList(list)
+            listStateView.visibility = View.GONE
+            pokemonSpeciesRecycler.visibility = View.VISIBLE
+        }
+    }
+
+    interface LoadMoreItem {
+        fun loadMoreItems()
     }
 }
