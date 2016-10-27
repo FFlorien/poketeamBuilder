@@ -77,8 +77,8 @@ class TranslationTableField : DBTable<DualStringTranslation> {
         return this
     }
 
-    public override fun reset() {
-        super.reset()
+    public override fun resetCurrentParsing() {
+        super.resetCurrentParsing()
         mIsFirstParsed = false
     }
 
