@@ -7,6 +7,8 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 public class DBPokedexHelper extends SQLiteAssetHelper {
 
+    public static final String TAG = "pokedexDB";
+
     private static final String DATABASE_NAME = "veekun-pokedex.sqlite";
     private static final int DATABASE_VERSION = 1;
 
