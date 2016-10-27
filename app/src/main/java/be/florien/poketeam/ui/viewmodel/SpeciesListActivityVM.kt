@@ -57,7 +57,7 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
             pokemonSpeciesRecycler.adapter = speciesAdapter
             pokemonSpeciesRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
-                    if (shouldLoad && layoutManager.findLastVisibleItemPosition() > (speciesAdapter.itemCount - 5) && !updateAsked) {
+                    if (shouldLoad && layoutManager.findLastVisibleItemPosition() > (speciesAdapter.itemCount - 15) && !updateAsked) {
                         listener.loadMoreItems()
                         updateAsked = true
                     }
@@ -68,7 +68,7 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
 
     private fun setPokemonData(list: List<PokemonSpecie>) {
         viewBinding.apply {
-            speciesAdapter.setList(list)
+            speciesAdapter.addToList(list)
             listStateView.visibility = View.GONE
             pokemonSpeciesRecycler.visibility = View.VISIBLE
         }
@@ -85,7 +85,7 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
     }
 
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<List<PokemonSpecie>> {
-        return PokemonSpecieListLoader(viewBinding.root.context, specieTable, dbHelper, 20, counter++)
+        return PokemonSpecieListLoader(viewBinding.root.context, specieTable, dbHelper, 50, counter++)
     }
 
     override fun onLoaderReset(loader: Loader<List<PokemonSpecie>>?) {

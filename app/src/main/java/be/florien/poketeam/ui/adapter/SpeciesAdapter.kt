@@ -11,7 +11,12 @@ import be.florien.poketeam.ui.viewmodel.PokemonItemVM
 import be.florien.poketeam.ui.viewmodel.SpeciesItemVM
 
 class SpeciesAdapter() : RecyclerView.Adapter<SpeciesAdapter.SpeciesItemViewHolder>() {
-    var species = listOf<PokemonSpecie>()
+    val species = mutableListOf<PokemonSpecie>()
+
+    fun addToList(list: List<PokemonSpecie>) {
+        species.addAll(list)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpeciesItemViewHolder {
         val speciesBinding = parent.inflateBinding(R.layout.item_species) as ItemSpeciesBinding
@@ -48,10 +53,5 @@ class SpeciesAdapter() : RecyclerView.Adapter<SpeciesAdapter.SpeciesItemViewHold
                 pokemonItemVMs[index].setPokemon(value)
             }
         }
-    }
-
-    fun setList(list: List<PokemonSpecie>) {
-        species = list
-        notifyDataSetChanged()
     }
 }
