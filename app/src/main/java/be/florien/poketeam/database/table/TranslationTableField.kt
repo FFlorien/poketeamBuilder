@@ -85,8 +85,8 @@ class TranslationTableField : DBTable<DualStringTranslation> {
     @Throws(NoSuchFieldException::class)
     override fun getFieldToSet(fieldToSet: DBData<*>): Field {
         val field: Field
-        // Log.d("POKEMON", mTableName + ".getFieldToSet("+ fieldToSet.getFieldName() + ") / mCurrent == " + mCurrentObject.id + " - " +
-        // mCurrentObject.first + " - " + mCurrentObject.second);
+        // Log.d("POKEMON", mTableName + ".getFieldToSet("+ fieldToSet.getFieldName() + ") / mCurrent == " + currentObject.id + " - " +
+        // currentObject.first + " - " + currentObject.second);
         if (fieldToSet is IntField) {
             field = modelClass.getField("id")
         } else if (!mIsFirstParsed) {
