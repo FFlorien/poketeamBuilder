@@ -35,7 +35,8 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
                             .selectId()
                             .selectIdentifier()
                             .selectTypes(
-                                    TypeTableTmpForPokemon()
+                                    (TypeTableTmpForPokemon()
+                                            .setRepeatable() as TypeTableTmpForPokemon)
                                             .selectId()
                                             .selectIdentifier()
                                             .selectName())
@@ -82,10 +83,13 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
     override fun onLoadFinished(loader: Loader<List<PokemonSpecie>>?, data: List<PokemonSpecie>) {
         setPokemonData(data)
         shouldLoad = specieTable.hasMoreResults()
+        nbToLoad = 50
     }
 
+    private var nbToLoad = 20
+
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<List<PokemonSpecie>> {
-        return PokemonSpecieListLoader(viewBinding.root.context, specieTable, dbHelper, 50, counter++)
+        return PokemonSpecieListLoader(viewBinding.root.context, specieTable, dbHelper, nbToLoad, counter++)
     }
 
     override fun onLoaderReset(loader: Loader<List<PokemonSpecie>>?) {
