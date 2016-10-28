@@ -51,14 +51,12 @@ public class TypeTableTmpForPokemon extends DBTable<Type> {
     }
     
     public TypeTableTmpForPokemon selectTypeEfficacityAsAttack(TypeEfficacyAsAttackTable table) {
-        table.setAlias("attack");
-        selectTable(table);
+        selectTable(table, "attack");
         return this;
     }
     
     public TypeTableTmpForPokemon selectTypeEfficacityAsDefense(TypeEfficacyAsDefenseTable table) {
-        table.setAlias("defense");
-        selectTable(table);
+        selectTable(table, "defense");
         return this;
     }
 

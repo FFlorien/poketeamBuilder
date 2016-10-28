@@ -88,12 +88,12 @@ class TranslationTableField : DBTable<DualStringTranslation> {
         // Log.d("POKEMON", mTableName + ".getFieldToSet("+ fieldToSet.getFieldName() + ") / mCurrent == " + currentObject.id + " - " +
         // currentObject.first + " - " + currentObject.second);
         if (fieldToSet is IntField) {
-            field = pojoClass.getField("id")
+            field = modelObjectClass.getField("id")
         } else if (!mIsFirstParsed) {
             mIsFirstParsed = true
-            field = pojoClass.getField("first")
+            field = modelObjectClass.getField("first")
         } else {
-            field = pojoClass.getField("second")
+            field = modelObjectClass.getField("second")
         }
         return field
     }
