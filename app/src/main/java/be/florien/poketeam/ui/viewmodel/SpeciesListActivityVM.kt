@@ -24,8 +24,8 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
     private var updateAsked = false
     private var shouldLoad = true
     private var counter = 0
-    private var dbHelper : DBPokedexHelper
-    private val specieTable : PokemonSpecieTable = PokemonSpecieTable()
+    private var dbHelper: DBPokedexHelper
+    private val specieTable: PokemonSpecieTable = PokemonSpecieTable()
             .selectId()
             .selectIdentifier()
             .selectPokemonSpeciesNames(
@@ -34,19 +34,19 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
                     PokemonTable()
                             .selectId()
                             .selectIdentifier()
-                            .selectTypes(
-                                    (TypeTableTmpForPokemon()
-                                            .setRepeatable() as TypeTableTmpForPokemon)
-                                            .selectId()
-                                            .selectIdentifier()
-                                            .selectName())
                             .selectPokemonForms(
                                     PokemonFormTable()
                                             .selectId()
                                             .selectIdentifier()
                                             .selectFormIdentifier()
                                             .selectPokemonFormNames(
-                                                    TranslationTableField.forPokemonForm())))
+                                                    TranslationTableField.forPokemonForm()))
+                            .selectTypes(
+                                    (TypeTableTmpForPokemon()
+                                            .setRepeatable() as TypeTableTmpForPokemon)
+                                            .selectId()
+                                            .selectIdentifier()
+                                            .selectName()))
 
     init {
         dbHelper = DBPokedexHelper(viewBinding.root.context)
