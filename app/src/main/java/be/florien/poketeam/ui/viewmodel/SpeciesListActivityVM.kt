@@ -42,8 +42,8 @@ class SpeciesListActivityVM(private val viewBinding: ActivityPokemonListBinding,
                                             .selectPokemonFormNames(
                                                     TranslationTableField.forPokemonForm()))
                             .selectTypes(
-                                    (TypeTableTmpForPokemon()
-                                            .setRepeatable() as TypeTableTmpForPokemon)
+                                    /*(*/TypeTableTmpForPokemon()
+//                                            .setRepeatable() as TypeTableTmpForPokemon)
                                             .selectId()
                                             .selectIdentifier()
                                             .selectName()))
